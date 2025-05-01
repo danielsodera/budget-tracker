@@ -1,14 +1,13 @@
 
-def ask_for_expense
-	puts "Add your expense, and hit enter to save it!"
-	expense = gets.chomp 
+expenses = []
+
+5.times do 
+	puts "What is the amount?"
+	expenses << gets.chomp.to_i 
 end
 
-response = ""
+total_expenses = expenses.reduce(:+)
 
-until response == "no" do 
-	ask_for_expense
-	puts "Done with adding your expenses? Write 'no' to end"
-	response = gets.chomp
-end
+puts "You saved #{total_expenses}"
+
 
